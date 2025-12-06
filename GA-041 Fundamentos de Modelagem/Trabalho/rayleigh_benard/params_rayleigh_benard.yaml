@@ -1,0 +1,16 @@
+# Geometry and resolution parameters (discretization)
+"Lx": 4.0 # (float | default: 4.0). Horizontal length (y-axis) of the non-dimensionalized domain.
+"Lz": 1.0 # (float | default: 1.0). Vertical height (z-axis) of the non-dimensionalized domain. Rayleigh-Bénard occurs between z = 0 and z = Lz.
+"Nx": 256 # (int | default: 256). Number of points (Fourier coefficients) used to discretize the y-axis. Determines the horizontal resolution.
+"Nz": 64 # (int | default: 64). Number of points (Chebyshev coefficients) used to discretize the z-axis. Determines the vertical resolution.
+"dealias": 1.5 # (float | default: 1.5). Dealiasing factor (antialiasing). It`s used in spectral methods to avoid aliasing errors caused by the multiplication of nonlinear fields in Fourier space. A value of 1.5 is common and means that one third of the high-frequency coefficients are discarded.
+
+# Physical parameters (non-dimensionalized)
+"rayleigh": 2e6 # (float | default: 2e6). The Rayleigh number is the main parameter that measures the intensity of the thermal forcing (the heating at the base) in relation to heat and momentum diffusion.
+"prandtl": 1.0 # (float | default: 1.0). The Prandtl number is a fluid property that compares the momentum diffusivity (kinematic viscosity) with thermal diffusivity.
+
+# Solver parameters
+"stop_sim_time": 50 # (int | default: 50). Simulation time (non-dimensional) at which execution should stop.
+"time_stepper": "RK222" # (str | default: "RK2"). Temporary integrator.
+"max_time_step": 0.125 # (float | default: 0.125). The maximum time step (non-dimensional) that the solver can use. This ensures stability and accuracy in the integration.
+"dtype": "float64" # (str | default: "float64"). Numerical precision.
