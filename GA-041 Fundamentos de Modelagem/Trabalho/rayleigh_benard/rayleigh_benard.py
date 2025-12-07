@@ -134,8 +134,8 @@ def rayleigh_benard(args):
     problem.add_equation("dt(u) - nu*div(grad_u) + grad(p) - b*ez + lift(tau_u2) = - u@grad(u)") # momentum equation
 
     # Buoyancy boundary conditions
-    problem.add_equation("b(z=0) = Lz") # top plate (hot)
-    problem.add_equation("b(z=Lz) = 0") # bottom plate (cold)
+    problem.add_equation("b(z=0) = Lz") # top plate (cold)
+    problem.add_equation("b(z=Lz) = 0") # bottom plate (hot)
 
     # Vorticity boundary conditions (no-slip)
     problem.add_equation("u(z=0) = 0")
